@@ -1,0 +1,7 @@
+.image {
+     transform: rotateY(50deg);
+     transition: 1s;
+     &.active {
+          transform: rotateY(0deg);
+     }
+}

@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "eslint:recommended"
+  ],
+  "plugins": [
+    "no-console",
+    "no-unused-vars"
+  ],
+  "rules": {
+    "no-console": "warn",
+    "no-unused-vars": "error"
+  }
+}

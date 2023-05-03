@@ -1,0 +1,62 @@
+.carousel {
+	padding: 120px 10% 80px;
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	row-gap: 40px;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	&.active {
+		.about p {
+			transform: rotate(0deg);
+		}
+		div div div div div div div div * {
+			scale: 1;
+			transition-delay: 2s;
+			transition: 1.5s;
+		}
+		& > div > div > div > div div {
+			translate: 0;
+			transition: 2s;
+		}
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: -4;
+		background-color: #003d76;
+		inset: 0;
+	}
+	.about {
+		margin-top: 5%;
+		width: 60%;
+		// mix-blend-mode: difference;
+		p {
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 24px;
+			max-width: 400px;
+			color: #ededed;
+			transform: rotateX(90deg);
+			transition: 2s;
+		}
+		h1 {
+			max-width: 415px;
+			margin-bottom: 17px;
+			color: white;
+		}
+	}
+	& > div > div > div > div div {
+		translate: 100%;
+	}
+	div div div div div div div div * {
+		scale: 0;
+	}
+	@media (max-width: 1070px) {
+		flex-wrap: wrap;
+		.about {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.parnters {
+	img {
+		scale: 0;
+		transition: 2s;
+		width: 70%;
+	}
+	&.active {
+		img {
+			width: 70%;
+
+			scale: 1;
+		}
+	}
+}

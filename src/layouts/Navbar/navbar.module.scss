@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inter:wght@400;500;600;700&display=swap");
+@import "../../styles/variables.scss";
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	gap: 15%;
+	justify-content: space-between;
+	width: 100%;
+	z-index: 100;
+	font-size: 18px;
+	transition: 0.5s;
+	background-color: rgba(0, 0, 0, 0.2);
+	min-height: 100px;
+
+	img {
+		max-width: 200px;
+		width: 100%;
+		height: 40px;
+		object-fit: contain;
+	}
+	a {
+		display: inline-block;
+	}
+	&__logo {
+		max-width: 200px;
+		width: 178px;
+		height: 50px;
+		line-height: 15px;
+		color: #000;
+		position: relative;
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 3rem;
+			color: #000;
+		}
+		p {
+			position: absolute;
+			bottom: 5px;
+			right: 0;
+			align-self: flex-end;
+			font-size: 1.3rem;
+			font-family: "Black Ops One", cursive;
+			margin-bottom: 5px;
+		}
+	}
+	.menu {
+		max-width: 60%;
+		font-size: 22px;
+		display: flex;
+		gap: 10px;
+	}
+	.logo {
+		background-color: $primary;
+		color: white;
+		border: none;
+		border-radius: 10px;
+		padding: 12px 42px;
+		position: relative;
+		transition: 300ms;
+		&::before {
+			content: "";
+			top: 100%;
+			left: 50%;
+			translate: -50%;
+			width: 10%;
+			aspect-ratio: 2/1;
+			background-color: $primary;
+			position: absolute;
+			clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+		}
+		&:hover {
+			scale: 1.1;
+		}
+	}
+	&.black {
+		background-color: rgba(255, 255, 255, 0.2);
+		.menu {
+			color: black;
+		}
+		a::before {
+			background-color: black;
+		}
+	}
+	&.black .menuBtn {
+		&::after,
+		&::before {
+			background-color: rgb(0, 0, 0);
+		}
+	}
+	.menuBtn {
+		display: none;
+		&::after,
+		&::before {
+			background-color: rgb(255, 255, 255);
+		}
+	}
+	&__lang {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		z-index: 10;
+		button {
+			width: 25px;
+			height: 25px;
+			border-radius: 50%;
+			background-size: cover;
+			border: none;
+			cursor: pointer;
+		}
+		&_ru {
+			background-image: url("../../../public/media/flag_ru.jpg");
+		}
+		&_uz {
+			background-image: url("../../../public/media/flag_uz.jpg");
+		}
+	}
+	@media (max-width: 1000px) {
+		min-height: 70px;
+		.menuBtn {
+			display: block;
+		}
+		.menu {
+			position: fixed;
+			color: black;
+			top: 100px;
+			left: 0;
+			flex-direction: column;
+			align-items: stretch;
+			min-width: 200px;
+			width: 40%;
+			transition: 1s;
+			translate: -100%;
+			z-index: -12;
+		}
+		.menu a::before {
+			background-color: black;
+			transition: 1s;
+			height: 1px;
+		}
+		.menu a,
+		.menu div {
+			padding: 15px 10%;
+		}
+
+		.menu.open {
+			translate: 0;
+		}
+		.menu::before {
+			content: "";
+			transition: 1s;
+			position: absolute;
+			height: 200vh;
+			width: 100vw;
+			top: -100px;
+			left: 0;
+			translate: -100%;
+		}
+		.menu.open::before {
+			translate: 0;
+			background-color: rgb(255, 255, 255);
+		}
+	}
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	color: white;
+	a {
+		padding: 30px 0;
+		position: relative;
+		font-size: 18px;
+		transition: 500ms;
+	}
+	a::before {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		height: 2px;
+		background-color: $light;
+		width: 0%;
+		transition: 500ms;
+	}
+	a:hover,
+	a.active {
+		&::before {
+			width: 100%;
+		}
+	}
+	a:last-child::before {
+		display: none;
+	}
+}
+
+.menuBtn {
+	height: 20px;
+	width: 40px;
+	position: relative;
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 2px;
+		width: 100%;
+		transform-origin: center center;
+		transition: 1s;
+	}
+	&::before {
+		top: unset;
+		bottom: 0;
+		width: 60%;
+	}
+
+	&.x {
+		&::after,
+		&::before {
+			height: 1px;
+			background-color: black !important;
+		}
+		&::before {
+			bottom: 50%;
+			translate: 0 50%;
+			rotate: -50deg;
+			width: 100%;
+		}
+		&::after {
+			top: 50%;
+			translate: 0 -50%;
+			rotate: 50deg;
+		}
+	}
+}
+
+.homeicon {
+	position: fixed;
+	bottom: 7%;
+	right: 4%;
+	z-index: 10;
+
+	svg {
+		font-size: 40px;
+		color: #0057b7;
+	}
+}
+.user {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 7px;
+	cursor: pointer;
+}

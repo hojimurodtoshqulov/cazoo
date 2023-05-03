@@ -1,0 +1,103 @@
+.blob {
+     position: absolute;
+     padding: 5vw;
+     background-color: #0077e5;
+     border-radius: 50%;
+     z-index: -1;
+     &.blue {
+          &.first {
+               animation: blob-first 50s linear infinite;
+          }
+          &.second {
+               background: #002548;
+               padding: 15vw;
+               animation: blob-second 51s linear 30s infinite;
+               top: 100%;
+          }
+          &.third {
+               background: #2c5174;
+               padding: 13vw;
+               animation: blob-third 49s linear infinite;
+               top: 100%;
+          }
+          &.fourth {
+               background: #003d76;
+               padding: 6vw;
+               animation: blob-fourth 38s linear infinite;
+               top: 100%;
+          }
+     }
+}
+
+@keyframes blob-first {
+     0% {
+          top: -10vw;
+          left: 10%;
+     }
+     60% {
+          top: 60%;
+          left: 50%;
+     }
+     100% {
+          top: 80%;
+          left: 130%;
+          scale: 3;
+     }
+}
+@keyframes blob-second {
+     20% {
+          top: 100%;
+          left: 0%;
+     }
+     50% {
+          top: 60%;
+          left: 20%;
+     }
+     80% {
+          top: 30%;
+          left: 70%;
+     }
+     100% {
+          top: 0%;
+          left: 100%;
+     }
+}
+
+@keyframes blob-third {
+     20% {
+          top: 100%;
+          left: 0%;
+     }
+     50% {
+          top: 60%;
+          left: 20%;
+     }
+     80% {
+          top: 30%;
+          left: 70%;
+     }
+     100% {
+          top: 0%;
+          left: 100%;
+     }
+}
+
+@keyframes blob-fourth {
+     0% {
+          top: 60%;
+          left: 110%;
+     }
+     20% {
+          top: 60%;
+          left: 110%;
+     }
+     60% {
+          top: 50%;
+          left: 90%;
+     }
+     100% {
+          top: -20vw;
+          left: 90%;
+          scale: 2;
+     }
+}

@@ -1,0 +1,14 @@
+.video {
+	position: relative;
+	height: 400vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.last {
+	background-color: white;
+	position: relative;
+	z-index: 12;
+}

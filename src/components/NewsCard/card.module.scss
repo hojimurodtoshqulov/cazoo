@@ -1,0 +1,33 @@
+.newscard {
+	width: 95%;
+	margin: 0 auto;
+	position: relative;
+	aspect-ratio: 5/6;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 2px 5px 15px 3px rgba(0, 0, 0, 0.247);
+	margin: 10px 0;
+	img {
+		// width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	p {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		color: white;
+		background: rgba(0, 61, 118, 0.7);
+		backdrop-filter: blur(8.5px);
+		padding: 10% 5%;
+		font-weight: 500;
+		font-size: 20px;
+		line-height: 125%;
+	}
+	@media (max-width: 800px) {
+		p {
+			font-size: 16px;
+		}
+	}
+}

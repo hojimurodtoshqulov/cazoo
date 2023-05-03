@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Inter:wght@400;500;600;700&display=swap");
+
+.footer {
+	background-color: #f0f0f0;
+	padding: 20px 10% 15px;
+	font-family: "Work Sans";
+	font-style: normal;
+	position: relative;
+	z-index: 12;
+	a,
+	p,
+	h1,
+	h2,
+	h3,
+	svg {
+		opacity: 0;
+		scale: 0 1;
+	}
+	&.active {
+		a,
+		p,
+		h1,
+		h2,
+		h3,
+		svg {
+			opacity: 1;
+			scale: 1;
+			transition: 1s;
+		}
+	}
+	.top {
+		display: flex;
+		justify-content: space-between;
+		gap: 3%;
+		padding-bottom: 30px;
+		h1,
+		h2 {
+			color: #707686;
+			font-family: sans-serif;
+		}
+		h1 {
+			font-weight: 600;
+			font-size: 30px;
+		}
+		h2 {
+			font-weight: 500;
+			font-size: 18px;
+			margin-bottom: 12px;
+		}
+
+		.row {
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			padding-top: 30px;
+		}
+		.row:first-child {
+			width: 30%;
+			padding-top: 0;
+		}
+
+		p,
+		a {
+			font-weight: 300;
+			line-height: 28px;
+			color: #707686;
+		}
+		p {
+			font-size: 18px;
+			margin: 15px 0 24px;
+			font-family: sans-serif;
+		}
+		a {
+			font-size: 14px;
+		}
+		@media (max-width: 800px) {
+			flex-wrap: wrap;
+			row-gap: 30px;
+			.row:first-child {
+				order: 1;
+				width: 48%;
+			}
+			.row {
+				width: 48%;
+			}
+		}
+		@media (max-width: 500px) {
+			flex-wrap: wrap;
+			row-gap: 30px;
+			.row:first-child {
+				order: unset;
+				width: 100%;
+			}
+			.row:nth-child(2) {
+				order: 1;
+				width: 100%;
+			}
+		}
+	}
+	* {
+		outline: none;
+	}
+
+	.icons {
+		display: flex;
+		justify-content: space-between;
+		max-width: 100px;
+		padding-top: 30px;
+		svg {
+			font-size: 25px;
+			color: var(--blue-common);
+		}
+	}
+	.bottom {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 11px;
+		border-top: 2px solid rgba(204, 210, 222, 0.81);
+		h3 {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 26px;
+			color: #707686;
+		}
+		span {
+			gap: 10px;
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 24px;
+
+			display: flex;
+			letter-spacing: 0.02em;
+
+			color: #707686;
+		}
+	}
+}
+.logo {
+	max-width: 200px;
+	width: 160px;
+	height: 50px;
+	line-height: 15px;
+	position: relative;
+	svg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-size: 3rem;
+		color: #000;
+	}
+	&_p {
+		position: absolute;
+		bottom: -20px;
+		right: 0;
+		align-self: flex-end;
+		font-size: 1.3rem;
+		font-family: "Black Ops One", cursive !important;
+		// margin-bottom: 5px;
+		color: #000 !important;
+	}
+}

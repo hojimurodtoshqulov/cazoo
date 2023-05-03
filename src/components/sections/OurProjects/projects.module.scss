@@ -1,0 +1,51 @@
+.projects {
+	padding: 4vw 7vw;
+	translate: 0 100px;
+	opacity: 0;
+	transition: 1s;
+	h1 {
+		padding-bottom: 30px;
+	}
+	.row img {
+		aspect-ratio: 3/5;
+		object-fit: cover;
+		margin: 1vw;
+		border-radius: 10px;
+		box-shadow: 2px 5px 15px 3px rgba(0, 0, 0, 0.247);
+	}
+	.images {
+		display: flex;
+	}
+	.row {
+		width: 25%;
+		display: flex;
+		flex-direction: column;
+	}
+	.row:nth-child(even) {
+		margin-top: 60px;
+	}
+	&.active {
+		translate: 0;
+		opacity: 1;
+	}
+}
+
+.slider {
+	display: none;
+	img {
+		aspect-ratio: 3/5;
+		width: 95%;
+		margin: 0 auto;
+		object-fit: cover;
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 1000px) {
+	.projects .images {
+		display: none;
+	}
+	.slider {
+		display: block;
+	}
+}

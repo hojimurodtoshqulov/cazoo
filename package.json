@@ -1,0 +1,43 @@
+{
+  "name": "the-doors",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "@types/react-dom": "18.0.11",
+  "eslint": "8.37.0",
+  "eslint-config-next": "13.2.4",
+  "next": "13.2.4",
+  "dependencies": {
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.33",
+    "axios": "^1.3.5",
+    "framer-motion": "^10.11.2",
+    "i18next": "^22.4.15",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-resources-to-backend": "^1.1.3",
+    "next": "^12.3.4",
+    "next-i18next": "^13.2.2",
+    "node-modules": "^1.0.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "^12.2.0",
+    "react-icons": "^4.8.0",
+    "react-intl": "^6.4.1",
+    "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.2",
+    "sass": "^1.60.0",
+    "slick-carousel": "^1.8.1",
+    "swiper": "^9.2.0",
+    "typescript": "5.0.3",
+    "vanilla-tilt": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/react-slick": "^0.23.10",
+    "eslint": "^8.39.0"
+  }
+}
