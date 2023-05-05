@@ -11,7 +11,7 @@
 		width: 90vw;
 		@media (max-width: 765px) {
 			position: absolute;
-			top: 20vh;
+			top: 10vh;
 		}
 	}
 	&.active {
@@ -211,7 +211,7 @@
 		bottom: -10vh;
 	}
 	@media (max-width: 765px) {
-		bottom: 1vh;
+		bottom: 22vh;
 		right: 10vw;
 	}
 }

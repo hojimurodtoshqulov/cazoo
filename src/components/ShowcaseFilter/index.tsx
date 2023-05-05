@@ -12,17 +12,35 @@ function ShowcaseFilter({
 	const ref = useRef(null);
 	const entity = useIntersectionObserver(ref, {});
 	const filter = (e: React.ReactNode) => {
-		e.preventDefault()
+		e.preventDefault();
 	};
 	return (
 		<div className={styles.showcaseFilter} ref={ref}>
 			<h2>Buy or finance</h2>
-			<form action="" onSubmit={filter}>
-				<input type="text" placeholder="maker" />
+			<div className={styles.selectDiv}>
+				{/* <input type="text" placeholder="maker" />
 				<input type="text" placeholder="model" />
-				<input type="text" placeholder="price" />
+				<input type="text" placeholder="price" /> */}
+				<select>
+					<option value="">Volga</option>
+					<option value="">zaparoj</option>
+					<option value="">maskvich</option>
+					<option value="">jiguli</option>
+				</select>
+				<select>
+					<option value="">zaparoj </option>
+					<option value="">Volga</option>
+					<option value="">maskvich</option>
+					<option value="">jiguli</option>
+				</select>
+				<select>
+					<option value="">maskvich </option>
+					<option value="">zaparoj</option>
+					<option value="">Volga</option>
+					<option value="">jiguli</option>
+				</select>
 				<button>search</button>
-			</form>
+			</div>
 		</div>
 	);
 }
