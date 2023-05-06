@@ -1,0 +1,11 @@
+.filterSection {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	.filterSectionDiv1 {
+		width: 30%;
+	}
+	.filterSectionDiv2 {
+		width: 70%;
+	}
+}

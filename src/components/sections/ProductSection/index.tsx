@@ -27,7 +27,7 @@ function ProductSection() {
 		return intl?.formatMessage({ id: id });
 	};
 	return (
-		<div className={styles.products}>
+		<div className={`${styles.products}  ${styles.filterProduct}` }>
 			<Title style={{ marginBottom: "calc(20px + 2vw)" }}>
 				Browse our latest used cars
 				{/* {t("products")} */}

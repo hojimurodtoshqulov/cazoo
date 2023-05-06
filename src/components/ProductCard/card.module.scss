@@ -4,7 +4,7 @@
 	position: relative;
 	border: 1px solid #e3e3e3;
 	border-radius: 15px;
-	width: 23%;
+	width: 20vw;
 	opacity: 0;
 	translate: 0 20%;
 	transition: 2s;
@@ -79,4 +79,7 @@
 			color: red;
 		}
 	}
+}
+.filterProduct {
+	padding: 0;
 }

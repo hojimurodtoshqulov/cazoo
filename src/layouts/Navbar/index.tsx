@@ -105,7 +105,7 @@ function Navbar() {
 					{/*  <a className={"link"} data-to="about" onClick={onClick}>
             {t("about")}
           </a> */}
-					<Link href={"/#about"}>{t("about")}</Link>
+					<Link href={"/buy"}>{t("about")}</Link>
 					{menuConfig.map((route: MenuRouteType) => (
 						<Link href={route.link} key={route.id}>
 							<a className={"link"}>{route.label}</a>

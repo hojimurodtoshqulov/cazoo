@@ -1,71 +1,73 @@
 .content {
-     position: absolute;
-     z-index: 5;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     flex-direction: column;
-     gap: 80px;
-     inset: 0 7vw;
-     translate: -100%;
-     opacity: 0;
-     & > div {
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          max-width: 800px;
-          div {
-               overflow: hidden;
-          }
-     }
-     &.active {
-          opacity: 1;
-          translate: 0;
-          transition: 1s;
+	margin-top: 10%;
+	position: absolute;
+	top: 50%;
+	z-index: 5;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 80px;
+	inset: 0 7vw;
+	translate: -100%;
+	opacity: 0;
+	& > div {
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		max-width: 800px;
+		div {
+			overflow: hidden;
+		}
+	}
+	&.active {
+		opacity: 1;
+		translate: 0;
+		transition: 1s;
 
-          h1 {
-               transition: 1s;
-               transition-delay: 1s;
-               translate: 0;
-          }
-     }
-     h1 {
-          // font-family: "Outfit";
-          translate: 0 100%;
-          max-width: 800px;
-          font-weight: 400;
-          font-size: 70px;
-          // line-height: 65px;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          gap: 20px;
-     }
-     p {
-          margin: 20px 0;
-          font-weight: 400;
-          font-size: 30px;
-          line-height: 133%;
-     }
+		h1 {
+			transition: 1s;
+			transition-delay: 1s;
+			translate: 0;
+		}
+	}
+	h1 {
+		// font-family: "Outfit";
+		translate: 0 100%;
+		max-width: 800px;
+		font-weight: 400;
+		font-size: 50px;
+		// line-height: 65px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		gap: 20px;
+	}
+	p {
+		margin: 20px 0;
+		font-weight: 400;
+		font-size: 25px;
+		line-height: 133%;
+	}
 
-     @media (max-width: 600px) {
-          gap: 50px;
-          h1 {
-               font-size: 40px;
-               line-height: 50px;
-          }
-          p {
-               font-size: 15px;
-               line-height: 20px;
-               margin: 10px 0;
-          }
-     }
+	@media (max-width: 600px) {
+		gap: 50px;
+		h1 {
+			font-size: 40px;
+			line-height: 50px;
+		}
+		p {
+			font-size: 15px;
+			line-height: 20px;
+			margin: 10px 0;
+		}
+	}
 }
 
 @keyframes title {
-     to {
-          translate: 0;
-     }
+	to {
+		translate: 0;
+	}
 }

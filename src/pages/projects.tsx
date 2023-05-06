@@ -1,4 +1,4 @@
-import AboutPage from "@/modules/AboutPage";
+import AboutPage from "@/modules/Buy";
 import ProjectsPage from "@/modules/ProjectsPage";
 
 export default function Home() {

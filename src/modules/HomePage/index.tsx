@@ -11,24 +11,26 @@ import styles from "./home.module.scss";
 import VideoSection from "@/components/sections/VideoSection";
 
 function HomePage() {
-  return (
-    <div>
-      <section className={styles.video}>
-        <Showcase />
-        <VideoSection />
-        <MagnificentWork />
-      </section>
-      <section className={styles.last}>
-        <Adds />
-        <ProductSection />
-        <ClientsSection />
-        {/* <NewsSection /> */}
-        <AboutSection />
-        <FormSection />
-        <PartnersSection />
-      </section>
-    </div>
-  );
+	return (
+		<div>
+			<section className={styles.video}>
+				<Showcase />
+				<VideoSection />
+				<MagnificentWork />
+			</section>
+			<section className={styles.last}>
+				<Adds />
+				<div className={styles.productSection}>
+					<ProductSection />
+				</div>
+				<ClientsSection />
+				{/* <NewsSection /> */}
+				<AboutSection />
+				<FormSection />
+				<PartnersSection />
+			</section>
+		</div>
+	);
 }
 
 export default HomePage;

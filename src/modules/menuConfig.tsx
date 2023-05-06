@@ -1,4 +1,4 @@
-import AboutPage from "./AboutPage";
+import AboutPage from "./Buy";
 import useIntl from "react-intl/src/components/useIntl";
 import HomePage from "./HomePage";
 {
