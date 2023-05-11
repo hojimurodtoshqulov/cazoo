@@ -1,48 +1,149 @@
 import { MainPropType } from "@/shared/types";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import styles from "./showcaseFilter.module.scss";
 import { BiSearch } from "react-icons/bi";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
+import axios from "axios";
+import { API_URL } from "@/shared/constants";
+import { CarsContext } from "@/context/CarContext";
+
+const getMekers = async () => {
+  try {
+    const data = axios.get(`${API_URL}/maker`);
+    return data;
+  } catch (error: any) {
+    throw new Error(error.message);
+  }
+};
 
 function ShowcaseFilter({
-	children,
-	title,
-	paragraph,
+  children,
+  title,
+  paragraph,
 }: MainPropType & { title: React.ReactNode; paragraph: string }) {
-	const ref = useRef(null);
-	const entity = useIntersectionObserver(ref, {});
-	const filter = (e: React.ReactNode) => {
-		e.preventDefault();
-	};
-	return (
-		<div className={styles.showcaseFilter} ref={ref}>
-			<h2>Buy or finance</h2>
-			<div className={styles.selectDiv}>
-				{/* <input type="text" placeholder="maker" />
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, {});
+  const [filterData, setFilterData] = useState({});
+  const {
+    cars,
+    getFilteredCars,
+    filterValues,
+    setQueries,
+    queries,
+    getModels,
+    setFilterValues,
+  } = useContext(CarsContext);
+
+  console.log(cars);
+  console.log(filterValues);
+
+  useEffect(() => {
+    // const searchCars = async () => {
+    //   try {
+    //     const { data: makers } = await getMekers();
+    //     setFilterData((prev) => ({ ...prev, makers }));
+    //   } catch (error: any) {
+    //     console.log(error);
+    //   }
+    // };
+    // searchCars();
+  }, []);
+
+  const removeQueryParam = (queryKey: string) => {
+    setQueries((prev: any) => {
+      const newQueries = Object.assign({}, prev);
+      delete newQueries[queryKey];
+      return newQueries;
+    });
+  };
+
+  console.log(queries);
+
+  const handleMakerChange = (e: any) => {
+    const makerId = Number(e.target.value);
+    console.log(setQueries);
+    if (makerId) {
+      setQueries((prev: any) => {
+        console.log(prev);
+        return { ...prev, makerId: makerId };
+      });
+      getModels(makerId);
+    } else {
+      console.log("hello");
+      removeQueryParam("makerId");
+      removeQueryParam("modelId");
+      setFilterValues((prev: any) => ({ ...prev, models: [] }));
+    }
+  };
+
+  const handleModelChange = (e: any) => {
+    const modelId = Number(e.target.value);
+    if (modelId) {
+      setQueries((prev: any) => ({ ...prev, modelId }));
+    } else {
+      removeQueryParam("modelId");
+    }
+  };
+
+  const handleCurrencyChange = (e: any) => {
+    const maxPrice = Number(e.target.value);
+    if (maxPrice) {
+      setQueries((prev: any) => ({ ...prev, maxPrice }));
+    } else {
+      removeQueryParam("maxPrice");
+    }
+  };
+
+  console.log(filterValues);
+
+  const numFormat = new Intl.NumberFormat("ru-RU", {
+    style: "currency",
+    currency: "uzs",
+  });
+
+  return (
+    <div className={styles.showcaseFilter} ref={ref}>
+      <h2>Buy or finance</h2>
+      <div className={styles.selectDiv}>
+        {/* <input type="text" placeholder="maker" />
 				<input type="text" placeholder="model" />
 				<input type="text" placeholder="price" /> */}
-				<select>
-					<option value="">Volga</option>
-					<option value="">zaparoj</option>
-					<option value="">maskvich</option>
-					<option value="">jiguli</option>
-				</select>
-				<select>
-					<option value="">zaparoj </option>
-					<option value="">Volga</option>
-					<option value="">maskvich</option>
-					<option value="">jiguli</option>
-				</select>
-				<select>
-					<option value="">maskvich </option>
-					<option value="">zaparoj</option>
-					<option value="">Volga</option>
-					<option value="">jiguli</option>
-				</select>
-				<button>search</button>
-			</div>
-		</div>
-	);
+        <select onChange={handleMakerChange} name="modelId">
+          <option selected>Select a maker</option>
+          {filterValues.makers?.map(
+            (maker: { id: number; name: string }, index: number) => {
+              return <option value={maker.id}>{maker.name}</option>;
+            }
+          )}
+        </select>
+        <select onChange={handleCurrencyChange} name="maxPrice">
+          <option selected>Select max price </option>
+          {filterValues.maxPrice.map((item: number) => {
+            return <option value={item}>{numFormat.format(item)}</option>;
+          })}
+        </select>
+        <select
+          onChange={handleModelChange}
+          // disabled={!Boolean(queries.makerId)}
+          name="makerId"
+        >
+          <option selected>Select a model</option>
+          {filterValues.models?.map(
+            (model: {
+              id: number;
+              name: string;
+              maker: { id: number; name: string };
+            }) => {
+              return <option value={model.id}>{model.name}</option>;
+            }
+          )}
+        </select>
+        <button disabled={Boolean(cars.length)}>
+          {cars.length ? `Search all ${cars.length} cars` : `No cars found`}
+        </button>
+      </div>
+    </div>
+  );
 }
 
 export default ShowcaseFilter;

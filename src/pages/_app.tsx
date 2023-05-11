@@ -11,6 +11,7 @@ import "@/styles/index.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-toastify/dist/ReactToastify.css";
+import CarDataProvider from "../context/CarContext";
 
 // import "swiper/css";
 // import "swiper/css/navigation";
@@ -28,10 +29,12 @@ export default function App({ Component, pageProps }: AppProps) {
   const { locale = "uz" } = useRouter();
   return (
     <IntlProvider locale={locale} messages={messages[locale]}>
-      <AppLayout>
-        <Component {...pageProps} />
-        <ToastContainer />
-      </AppLayout>
+      <CarDataProvider>
+        <AppLayout>
+          <Component {...pageProps} />
+          <ToastContainer />
+        </AppLayout>
+      </CarDataProvider>
     </IntlProvider>
   );
 }
