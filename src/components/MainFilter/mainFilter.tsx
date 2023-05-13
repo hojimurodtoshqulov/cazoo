@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react";
-import { Collapse, Select } from "antd";
+import { Checkbox, Collapse, Select, Space } from "antd";
 import scss from "./mainFilter.module.scss";
 import { CarsContext } from "@/context/CarContext";
 const { Panel } = Collapse;
@@ -38,7 +38,7 @@ const MainFilter: React.FC = () => {
   useEffect(() => {
     createMaxPriceOptions();
     createMinPriceOptions();
-  }, [filterValues]);
+  }, [queries]);
 
   const changeHandler = (queryObj: any) => {
     setQueries((prev: any) => ({ ...prev, ...queryObj }));
@@ -143,7 +143,6 @@ const MainFilter: React.FC = () => {
         <Panel header="Price" key="2">
           <div>Min & Max</div>
           <Select
-            key={mountToggle}
             onChange={(e) => {
               e
                 ? setQueries((prev: any) => ({ ...prev, minPrice: e }))
@@ -161,7 +160,6 @@ const MainFilter: React.FC = () => {
             value={queries.minPrice || ""}
           />
           <Select
-            key={mountToggle}
             onChange={(e) => {
               e
                 ? setQueries((prev: any) => ({ ...prev, maxPrice: e }))
@@ -178,8 +176,66 @@ const MainFilter: React.FC = () => {
             value={queries.maxPrice || ""}
           />
         </Panel>
-        <Panel header="This is panel header 3" key="3">
-          <p>{text}</p>
+        <Panel header="Fuel type" key="3">
+          <Checkbox.Group
+            style={{ width: "100%" }}
+            onChange={(e) =>
+              setQueries((prev: any) => ({ ...prev, fuelType: e }))
+            }
+          >
+            <div className={scss.checkBoxWrapper}>
+              {filterValues.fuelType.map((item) => (
+                <span>
+                  <Checkbox
+                    onChange={(e) => console.log(e.target.value)}
+                    value={item}
+                  >
+                    {item}
+                  </Checkbox>
+                </span>
+              ))}
+            </div>
+          </Checkbox.Group>
+        </Panel>
+     {/*    <Panel header="Features" key="4">
+          <Checkbox.Group
+            style={{ width: "100%" }}
+            onChange={(e) =>
+              setQueries((prev: any) => ({ ...prev, features: e }))
+            }
+          >
+            <div className={scss.checkBoxWrapper}>
+              {filterValues.features.map((item) => (
+                <span>
+                  <Checkbox
+                    onChange={(e) => console.log(e.target.value)}
+                    value={item}
+                  >
+                    {item}
+                  </Checkbox>
+                </span>
+              ))}
+            </div>
+          </Checkbox.Group>
+        </Panel> */}
+        <Panel header="Color" key="5">
+          <Checkbox.Group
+            style={{ width: "100%" }}
+            onChange={(e) => setQueries((prev: any) => ({ ...prev, color: e }))}
+          >
+            <div className={scss.checkBoxWrapper}>
+              {filterValues.color.map((item) => (
+                <span>
+                  <Checkbox
+                    onChange={(e) => console.log(e.target.value)}
+                    value={item}
+                  >
+                    {item}
+                  </Checkbox>
+                </span>
+              ))}
+            </div>
+          </Checkbox.Group>
         </Panel>
       </Collapse>
     </div>

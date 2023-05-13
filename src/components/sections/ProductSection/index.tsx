@@ -20,10 +20,10 @@ function ProductSection() {
   const { cars } = useContext(CarsContext);
 
   useEffect(() => {
-    axios.get(`${API_URL}/`).then((res) => {
-      console.log(res);
-      setProducts(res.data);
-    });
+    // axios.get(`${API_URL}/`).then((res) => {
+    //   console.log(res);
+    //   setProducts(res.data);
+    // });
   }, []);
   const intl = useIntl();
   const t = (id: string) => {

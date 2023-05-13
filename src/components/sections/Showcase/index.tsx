@@ -24,10 +24,10 @@ function Showcase() {
     return intl.formatMessage({ id: id });
   };
   useEffect(() => {
-    axios.get(`${API_URL}/api/show-case/1`).then((res) => {
-      setProducts(res?.data);
-      setProductImages(res?.data?.attachmentContentIds);
-    });
+    // axios.get(`${API_URL}/api/show-case/1`).then((res) => {
+    //   setProducts(res?.data);
+    //   setProductImages(res?.data?.attachmentContentIds);
+    // });
   
   }, []);
   console.log("Showcase products >->-> ", productImages[0]);
