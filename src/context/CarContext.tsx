@@ -69,6 +69,10 @@ const CarDataProvider = ({ children }: any) => {
       150000000, 200000000, 250000000, 300000000, 350000000, 400000000,
       450000000, 500000000,
     ],
+    minPrice: [
+      150000000, 200000000, 250000000, 300000000, 350000000, 400000000,
+      450000000, 500000000,
+    ],
   });
   const [queries, setQueries] = useState<CarsParams>({});
 
@@ -124,6 +128,7 @@ interface IfilterValues {
   features: string[];
   fuelType: string[];
   maxPrice: number[];
+  minPrice: number[];
 }
 
 export default CarDataProvider;
