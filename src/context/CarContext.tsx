@@ -70,7 +70,7 @@ const CarDataProvider = ({ children }: any) => {
       450000000, 500000000,
     ],
   });
-  const [queries, setQueries] = useState({});
+  const [queries, setQueries] = useState<CarsParams>({});
 
   const getFilteredCars = useCallback(async (queryParam: any) => {
     const fetchedCars = await httpGetCars(queryParam);
@@ -94,6 +94,7 @@ const CarDataProvider = ({ children }: any) => {
 
   useEffect(() => {
     getFilteredCars(queries);
+    if (!queries.makerId) setFilterValues((prev) => ({ ...prev, models: [] }));
   }, [queries]);
 
   const memoizedCarData = useMemo(
@@ -122,6 +123,7 @@ interface IfilterValues {
   color: string[];
   features: string[];
   fuelType: string[];
+  maxPrice: number[];
 }
 
 export default CarDataProvider;

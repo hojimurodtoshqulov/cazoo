@@ -1,85 +1,110 @@
 .product {
-	font-style: normal;
-	padding: 10px 10px 20px;
-	position: relative;
-	border: 1px solid #e3e3e3;
-	border-radius: 15px;
-	width: 20vw;
-	opacity: 0;
-	translate: 0 20%;
-	transition: 2s;
-	box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.5);
-	position: relative;
-	&.active {
-		translate: 0;
-		opacity: 1;
-	}
-	@media (max-width: 1200px) {
-		transition: 0s;
-	}
-	@media (max-width: 1150px) {
-		width: 30%;
-	}
-	@media (max-width: 830px) {
-		width: 47%;
-	}
-	@media (max-width: 550px) {
-		width: 100%;
-	}
-	.discount {
-		clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
-		top: 10%;
-		position: absolute;
-		background-color: red;
-		color: white;
-		padding: 3px 17px;
-		left: 0;
-		z-index: 10;
-	}
-	h2 {
-		font-size: 16px;
-		line-height: 150%;
-		padding: 11px 0 5px;
-		position: absolute;
-		top: 58%;
-		left: 13px;
-		background: rgba(0, 0, 0, 0.662);
-		color: #fff;
-		padding: 3px 15px;
-		border-radius: 5px;
-	}
-	// h1 {
-	//      font-weight: 500;
-	//      font-size: 16px;
-	//      line-height: 150%;
-	//      margin-bottom: 5px;
-	//      span {
-	//           font-size: 18px;
-	//           font-weight: 700;
-	//      }
-	// }
-	a {
-		width: 100%;
-	}
-	& > button {
-		width: 100%;
-		padding: 10px;
-	}
-	p {
-		font-size: 15px;
-		line-height: 130%;
-		padding: 10px 0 20px;
-		color: rgb(76, 76, 76);
-		color: rgb(42, 106, 255);
-		font-family: sans-serif;
-		border-bottom: 1px solid #666;
-		margin-bottom: 20px;
-		span {
-			cursor: pointer;
-			color: red;
-		}
-	}
+  font-style: normal;
+  padding: 10px 10px 20px;
+  position: relative;
+  border: 1px solid #e3e3e3;
+  border-radius: 15px;
+  width: 20vw;
+  opacity: 0;
+  translate: 0 20%;
+  transition: 2s;
+  box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  &.active {
+    translate: 0;
+    opacity: 1;
+  }
+  @media (max-width: 1200px) {
+    transition: 0s;
+  }
+  @media (max-width: 1150px) {
+    width: 30%;
+  }
+  @media (max-width: 830px) {
+    width: 47%;
+  }
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+  .discount {
+    clip-path: polygon(100% 0, 90% 50%, 100% 100%, 0 100%, 0 0);
+    top: 10%;
+    position: absolute;
+    background-color: red;
+    color: white;
+    padding: 3px 17px;
+    left: 0;
+    z-index: 10;
+  }
+  h2 {
+    font-size: 16px;
+    line-height: 150%;
+    padding: 11px 0 5px;
+    position: absolute;
+    top: 58%;
+    left: 13px;
+    background: rgba(0, 0, 0, 0.662);
+    color: #fff;
+    padding: 3px 15px;
+    border-radius: 5px;
+  }
+  // h1 {
+  //      font-weight: 500;
+  //      font-size: 16px;
+  //      line-height: 150%;
+  //      margin-bottom: 5px;
+  //      span {
+  //           font-size: 18px;
+  //           font-weight: 700;
+  //      }
+  // }
+  a {
+    width: 100%;
+  }
+  & > button {
+    width: 100%;
+    padding: 10px;
+  }
+  p {
+    font-size: 15px;
+    line-height: 130%;
+    padding: 10px 0 20px;
+    color: rgb(76, 76, 76);
+    color: rgb(42, 106, 255);
+    font-family: sans-serif;
+    border-bottom: 1px solid #666;
+    margin-bottom: 20px;
+    span {
+      cursor: pointer;
+      color: red;
+    }
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 800;
+  }
+  h4 {
+    color: #5b5b5b;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+
+  .cardFeatures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+	margin-bottom: 10px;
+
+    span {
+      display: block;
+      background-color: #c0c0c0;
+	  padding: 5px 5px;
+	  border-radius: 5px;
+	  font-size: 16px;
+    }
+  }
 }
 .filterProduct {
-	padding: 0;
+  padding: 0;
 }

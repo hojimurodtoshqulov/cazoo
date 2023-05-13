@@ -6,6 +6,8 @@ import useIntersectionObserver from "@/utils/InterSectionObserver";
 import axios from "axios";
 import { API_URL } from "@/shared/constants";
 import { CarsContext } from "@/context/CarContext";
+import { CarsParams } from "@/hooks/requests";
+import { useRouter } from "next/router";
 
 const getMekers = async () => {
   try {
@@ -34,8 +36,7 @@ function ShowcaseFilter({
     setFilterValues,
   } = useContext(CarsContext);
 
-  console.log(cars);
-  console.log(filterValues);
+  const router = useRouter();
 
   useEffect(() => {
     // const searchCars = async () => {
@@ -49,12 +50,16 @@ function ShowcaseFilter({
     // searchCars();
   }, []);
 
+  // const removeQueryParam = (queryKey: string) => {
+  //   setQueries((prev: any) => {
+  //     const newQueries = Object.assign({}, prev);
+  //     delete newQueries[queryKey];
+  //     return newQueries;
+  //   });
+  // };
+
   const removeQueryParam = (queryKey: string) => {
-    setQueries((prev: any) => {
-      const newQueries = Object.assign({}, prev);
-      delete newQueries[queryKey];
-      return newQueries;
-    });
+    setQueries((prev: any) => ({ ...prev, [queryKey]: "" }));
   };
 
   console.log(queries);
@@ -72,7 +77,6 @@ function ShowcaseFilter({
       console.log("hello");
       removeQueryParam("makerId");
       removeQueryParam("modelId");
-      setFilterValues((prev: any) => ({ ...prev, models: [] }));
     }
   };
 
@@ -108,16 +112,24 @@ function ShowcaseFilter({
         {/* <input type="text" placeholder="maker" />
 				<input type="text" placeholder="model" />
 				<input type="text" placeholder="price" /> */}
-        <select onChange={handleMakerChange} name="modelId">
-          <option selected>Select a maker</option>
+        <select
+          value={queries?.makerId}
+          onChange={handleMakerChange}
+          name="modelId"
+        >
+          <option value={""}>Select a maker</option>
           {filterValues.makers?.map(
             (maker: { id: number; name: string }, index: number) => {
               return <option value={maker.id}>{maker.name}</option>;
             }
           )}
         </select>
-        <select onChange={handleCurrencyChange} name="maxPrice">
-          <option selected>Select max price </option>
+        <select
+          value={queries?.maxPrice}
+          onChange={handleCurrencyChange}
+          name="maxPrice"
+        >
+          <option value={""}>Select max price </option>
           {filterValues.maxPrice.map((item: number) => {
             return <option value={item}>{numFormat.format(item)}</option>;
           })}
@@ -126,6 +138,7 @@ function ShowcaseFilter({
           onChange={handleModelChange}
           // disabled={!Boolean(queries.makerId)}
           name="makerId"
+          value={queries?.modelId}
         >
           <option selected>Select a model</option>
           {filterValues.models?.map(
@@ -138,7 +151,12 @@ function ShowcaseFilter({
             }
           )}
         </select>
-        <button disabled={Boolean(cars.length)}>
+        <button
+          disabled={!Boolean(cars.length)}
+          onClick={() => {
+            router.push("buy");
+          }}
+        >
           {cars.length ? `Search all ${cars.length} cars` : `No cars found`}
         </button>
       </div>
