@@ -7,7 +7,7 @@ import { MainPropType } from "@/shared/types";
 function AppLayout({ children }: MainPropType) {
   const [active, setActive] = useState<boolean>(true);
 
-  useEffect(() => {
+  useEffect(() => {    
     setTimeout(() => {
       setActive(false);
     }, 5000);

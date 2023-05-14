@@ -9,40 +9,48 @@ import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
 
 function ProductCard({
-	product,
-	setProduct,
-	style,
-	setIsModal,
+  product,
+  setProduct,
+  style,
+  setIsModal,
 }: MainPropType & {
-	product?: ProductType;
-	setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
-	setIsModal: Dispatch<SetStateAction<boolean>>;
+  product?: ProductType;
+  setProduct: Dispatch<SetStateAction<ProductType | undefined>>;
+  setIsModal: Dispatch<SetStateAction<boolean>>;
 }) {
-	const ref = useRef(null);
-	const entity = useIntersectionObserver(ref, {});
-	const [isLong, setIsLong] = useState<boolean>(false);
-	const intl = useIntl();
-	const t = (id: string) => {
-		return intl?.formatMessage({ id: id });
-	};
-	return (
-		<div
-			className={`${styles.product} ${entity?.isIntersecting && styles.active}`}
-			style={style}
-			ref={ref}
-			onClick={() => {
-				setIsModal(true);
-				setProduct(product);
-			}}
-		>
-			{/* {product?.discount ? (
+  const ref = useRef(null);
+  const entity = useIntersectionObserver(ref, {});
+  const [isLong, setIsLong] = useState<boolean>(false);
+  const intl = useIntl();
+  const t = (id: string) => {
+    return intl?.formatMessage({ id: id });
+  };
+  console.log("hello");
+  const priceFormatter = new Intl.NumberFormat("ru-Ru", {
+    style: "currency",
+    currency: "UZS",
+  });
+  return (
+    <div
+      className={`${styles.product} ${entity?.isIntersecting && styles.active}`}
+      style={style}
+      ref={ref}
+      onClick={() => {
+        setIsModal(true);
+        setProduct(product);
+      }}
+    >
+      <h1>Hello</h1>
+      {/* {product?.discount ? (
         <div className={styles.discount}>{product.discount}%</div>
       ) : (
         ""
       )} */}
-			{product ? <ImageSlider images={product?.attachmentContentIds} /> : ""}
-			<h2>{product?.titleUz}</h2>
-			{/* <h1>
+      {/* {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""} */}
+      {/* <h2>
+        <>{product?.maker.name}</>
+      </h2> */}
+      {/* <h1>
         from <span>{product?.price}</span>${" "}
         {product?.discount ? (
           <span style={{ color: "red", paddingLeft: "10px" }}>
@@ -52,13 +60,22 @@ function ProductCard({
           ""
         )}
       </h1> */}
-			<p>
-				{product?.descriptionUz?.slice(0, isLong ? -1 : 60)}...{" "}
-				<span onClick={() => setIsLong((prev) => !prev)}>{t("more")}</span>
-			</p>
-			<Button style={{ borderRadius: 10 }}>{t("showMore")}</Button>
-		</div>
-	);
+      <div className={styles.cardBody}>
+        <h3>{product?.maker.name}</h3>
+        <h4>{product?.model.name}</h4>
+        <div className={styles.cardFeatures}>
+          {product?.features.map((item, i) => (
+            <span key={i}>{item}</span>
+          ))}
+        </div>
+        <span className={styles.cardPrice}>
+          {priceFormatter.format(Number(product?.price || 0))}
+        </span>
+        {/* <span onClick={() => setIsLong((prev) => !prev)}>{t("more")}</span> */}
+      </div>
+      <Button style={{ borderRadius: 10 }}>{t("showMore")}</Button>
+    </div>
+  );
 }
 
 export default ProductCard;
