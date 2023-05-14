@@ -1,27 +1,48 @@
 .mainFilter {
-  width: 100%;
-  border-right: 1px solid #666;
-  border-radius: 0;
-  h2 {
-    padding: 10px 0 10px 40px;
-    color: #123250;
-  }
-  .accordion {
-    // border: 1px solid red;
-  }
-  svg {
-    color: #003d76;
-  }
+	width: 100%;
+	border-radius: 0;
+	position: sticky;
+	top: 0;
+	left: 0;
+	overflow-y: scroll;
+	box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.529);
+	h2 {
+		padding: 10px 0 10px 40px;
+		color: #123250;
+	}
+	.accordion {
+		// border: 1px solid red;
+		border-radius: 0;
+		border-top: 2px solid #ddd;
+		&__panel {
+			border-radius: 0;
+			border-bottom: 2px solid #ddd;
+			&:last-child {
+				border-radius: 0;
+			}
+		}
+	}
+	svg {
+		color: #003d76;
+		font-weight: bold;
+		font-size: 1.1rem;
+	}
 
-  .filterItemsWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+	.filterItemsWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
 
-  .checkBoxWrapper {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-  }
+	.checkBoxWrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1rem;
+	}
+}
+.ant-collapse-header {
+	.ant-collapse-header-text {
+		color: #003d76 !important;
+		font-size: 2rem !important;
+	}
 }

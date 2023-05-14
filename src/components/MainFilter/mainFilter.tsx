@@ -94,7 +94,7 @@ const MainFilter: React.FC = () => {
     <div className={`${scss.mainFilter}`}>
       <h2>Filter</h2>
       <Collapse accordion className={scss.accordion}>
-        <Panel header="Maker & Model" key="1">
+        <Panel className={scss.accordion__panel} header="Maker & Model" key="1">
           <div className={scss.filterItemsWrapper}>
             Maker
             <Select
@@ -140,7 +140,7 @@ const MainFilter: React.FC = () => {
           </div>
           {/* <p>{text}</p> */}
         </Panel>
-        <Panel header="Price" key="2">
+        <Panel className={scss.accordion__panel} header="Price" key="2">
           <div>Min & Max</div>
           <Select
             onChange={(e) => {
@@ -176,7 +176,7 @@ const MainFilter: React.FC = () => {
             value={queries.maxPrice || ""}
           />
         </Panel>
-        <Panel header="Fuel type" key="3">
+        <Panel className={scss.accordion__panel} header="Fuel type" key="3">
           <Checkbox.Group
             style={{ width: "100%" }}
             onChange={(e) =>
@@ -197,7 +197,7 @@ const MainFilter: React.FC = () => {
             </div>
           </Checkbox.Group>
         </Panel>
-     {/*    <Panel header="Features" key="4">
+     {/*    <Panel className={scss.accordion__panel} header="Features" key="4">
           <Checkbox.Group
             style={{ width: "100%" }}
             onChange={(e) =>
@@ -218,7 +218,7 @@ const MainFilter: React.FC = () => {
             </div>
           </Checkbox.Group>
         </Panel> */}
-        <Panel header="Color" key="5">
+        <Panel className={scss.accordion__panel} header="Color" key="5">
           <Checkbox.Group
             style={{ width: "100%" }}
             onChange={(e) => setQueries((prev: any) => ({ ...prev, color: e }))}
