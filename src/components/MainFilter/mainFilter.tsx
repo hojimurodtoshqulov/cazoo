@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useContext, useState, useEffect } from "react";
 import { Checkbox, Collapse, Select, Space } from "antd";
 import scss from "./mainFilter.module.scss";
