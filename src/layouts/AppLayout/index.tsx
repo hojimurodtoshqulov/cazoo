@@ -12,7 +12,6 @@ function AppLayout({ children }: MainPropType) {
       setActive(false);
     }, 5000);
   }, []);
-
   return (
     <div className={styles.layout}>
       {active ? (

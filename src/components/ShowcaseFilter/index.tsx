@@ -74,7 +74,7 @@ function ShowcaseFilter({
       });
       getModels(makerId);
     } else {
-      console.log("hello");
+      console.log("hello 1");
       removeQueryParam("makerId");
       removeQueryParam("modelId");
     }

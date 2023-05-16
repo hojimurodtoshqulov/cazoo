@@ -104,6 +104,17 @@
 	  font-size: 16px;
     }
   }
+
+  .imageBox {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 5 / 3;
+
+    img {
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
 }
 .filterProduct {
   padding: 0;

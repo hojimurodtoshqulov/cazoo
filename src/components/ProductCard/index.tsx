@@ -3,10 +3,11 @@ import styles from "./card.module.scss";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Button from "../Button";
 import CardSlider from "../ImageSlider";
-import { Dispatch, SetStateAction, useRef, useState } from "react";
+import {Dispatch, memo, SetStateAction, useRef, useState} from "react";
 import ImageSlider from "../ImageSlider";
 import useIntersectionObserver from "@/utils/InterSectionObserver";
 import useIntl from "react-intl/src/components/useIntl";
+import Image from "next/image";
 
 function ProductCard({
   product,
@@ -25,7 +26,7 @@ function ProductCard({
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
   };
-  console.log("hello");
+  console.log("hello 2");
   const priceFormatter = new Intl.NumberFormat("ru-Ru", {
     style: "currency",
     currency: "UZS",
@@ -40,13 +41,16 @@ function ProductCard({
         setProduct(product);
       }}
     >
-      <h1>Hello</h1>
+      {/*<h1>Hello</h1>*/}
       {/* {product?.discount ? (
         <div className={styles.discount}>{product.discount}%</div>
       ) : (
         ""
       )} */}
       {/* {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""} */}
+      <div className={styles.imageBox}>
+        {product && <Image src={`data:${product.attachments[0]?.contentType};base64,${product.attachments[0]?.data}`} layout={'fill'} alt=""/>}
+      </div>
       {/* <h2>
         <>{product?.maker.name}</>
       </h2> */}
@@ -78,4 +82,4 @@ function ProductCard({
   );
 }
 
-export default ProductCard;
+export default memo(ProductCard) ;

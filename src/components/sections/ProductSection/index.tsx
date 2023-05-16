@@ -18,6 +18,7 @@ function ProductSection() {
   const [isModal, setIsModal] = useState<boolean>(false);
   const [bigImage, setBigImage] = useState({ src: "", isActive: false });
   const { cars } = useContext(CarsContext);
+    console.log(cars);
 
   useEffect(() => {
     // axios.get(`${API_URL}/`).then((res) => {
