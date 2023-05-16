@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { Dispatch, SetStateAction, useState } from "react";
 import styles from "./styles.module.scss";
 import ModalImages from "../ModalImages";

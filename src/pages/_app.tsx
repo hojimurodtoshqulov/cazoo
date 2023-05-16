@@ -24,7 +24,7 @@ const messages: { [key: string]: { [key: string]: string } } = {
 };
 import type {AppProps} from "next/app";
 import {ToastContainer} from "react-toastify";
-import {DevSupport} from "@react-buddy/ide-toolbox-next";
+// import {DevSupport} from "@react-buddy/ide-toolbox-next";
 // import {ComponentPreviews, useInitial} from "@/components/dev";
 
 export default function App({Component, pageProps}: AppProps) {
