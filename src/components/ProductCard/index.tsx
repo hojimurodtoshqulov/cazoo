@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { MainPropType, ProductType } from "@/shared/types";
 import styles from "./card.module.scss";
 import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa";

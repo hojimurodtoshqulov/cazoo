@@ -10,20 +10,22 @@ function AppLayout({ children }: MainPropType) {
   useEffect(() => {    
     setTimeout(() => {
       setActive(false);
-    }, 5000);
+    }, 6000);
   }, []);
   return (
     <div className={styles.layout}>
       {active ? (
         <>
           <video
-            src="/media/Comp 1_1.mp4"
+            src="/media/showVideo2.mp4"
             autoPlay
             muted
             style={{
-              width: "100%",
+              width: "100vw",
               height: "100vh",
               position: "fixed",
+              objectFit: "cover",
+              backgroundSize: "cover",
               inset: 0,
               background: "white",
               zIndex: 100,
