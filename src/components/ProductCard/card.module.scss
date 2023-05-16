@@ -10,6 +10,7 @@
   transition: 2s;
   box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.5);
   position: relative;
+  overflow-x: hidden;
   &.active {
     translate: 0;
     opacity: 1;
@@ -111,6 +112,7 @@
     aspect-ratio: 5 / 3;
 
     img {
+      width: 100%;
       object-fit: cover;
       border-radius: 5px;
     }

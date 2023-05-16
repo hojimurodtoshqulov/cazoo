@@ -94,7 +94,7 @@ const MainFilter: React.FC = () => {
   return (
     <div className={`${scss.mainFilter}`}>
       <h2>Filter</h2>
-      <Collapse accordion className={scss.accordion}>
+      <Collapse defaultActiveKey={['1']} accordion className={scss.accordion}>
         <Panel className={scss.accordion__panel} header="Maker & Model" key="1">
           <div className={scss.filterItemsWrapper}>
             Maker
