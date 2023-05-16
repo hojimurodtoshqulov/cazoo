@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.main {
+  margin: 6rem 0;
+  padding: 0 10%;
+  * {
+    font-family: 'Lato', sans-serif;
+  }
+}
+
+.product {
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.productImage {
+  grid-column: span 2;
+}

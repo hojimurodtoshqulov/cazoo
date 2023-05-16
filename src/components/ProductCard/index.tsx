@@ -49,7 +49,7 @@ function ProductCard({
       )} */}
       {/* {product ? <ImageSlider images={product?.attachmentContentIds} /> : ""} */}
       <div className={styles.imageBox}>
-        {product && <Image src={`data:${product.attachments[0]?.contentType};base64,${product.attachments[0]?.data}`} layout={'fill'} alt=""/>}
+        {product && <img src={`https://10c72c27-767c-4998-967b-2da3e773b024.jprq.live/api/files/${product?.photosIds[0]}`} layout={'fill'} alt=""/>}
       </div>
       {/* <h2>
         <>{product?.maker.name}</>

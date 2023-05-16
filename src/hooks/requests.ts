@@ -1,5 +1,5 @@
 const API_URL =
-  "http://ec2-3-27-149-16.ap-southeast-2.compute.amazonaws.com:8080/api";
+  "https://10c72c27-767c-4998-967b-2da3e773b024.jprq.live/api";
 
 // GET cars
 
