@@ -34,6 +34,7 @@ export interface ProductType {
   features: string[];
   attachments: any[];
   registrationDate: Date;
+  photosIds: number[]
 }
 
 export enum BodyType {
