@@ -36,22 +36,22 @@ function ModalImages({
 
   return (
     <div className={styles.images}>
-      <div className={styles.miniimages}>
-        {/*{images?.map((image: number) => (*/}
+     {/*  <div className={styles.miniimages}>
+        {images?.map((image: number) => (
           <img
             src={`${API_URL}/files/${image}`}
             onClick={(e) => {
               setImage(image);
             }}
           />
-        {/*))}*/}
-        {/* <img
+        ))}
+        <img
           src={`data:image/png;base64,${images?.[0].data}`}
           onClick={(e) => {
             setImage(images?.[0].data || "");
           }}
-        /> */}
-      </div>
+        />
+      </div> */}
         <img className={styles.img}
             src={`${API_URL}/files/${imageId}`}
         />
