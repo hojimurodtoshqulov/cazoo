@@ -5,7 +5,7 @@ import Footer from "../Footer";
 import { MainPropType } from "@/shared/types";
 
 function AppLayout({ children }: MainPropType) {
-  const [active, setActive] = useState<boolean>(false);
+  const [active, setActive] = useState<boolean>(true);
 
   useEffect(() => {    
     setTimeout(() => {
