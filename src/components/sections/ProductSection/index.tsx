@@ -30,7 +30,6 @@ function ProductSection() {
   const t = (id: string) => {
     return intl?.formatMessage({ id: id });
   };
-  console.log(cars);
   return (
     <div className={`${styles.products}  ${styles.filterProduct}`}>
       <Title style={{ marginBottom: "calc(20px + 2vw)" }}>

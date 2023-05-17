@@ -1,7 +1,7 @@
 import React from "react";
 import AboutShowcase from "@/components/sections/MainShowcase";
 import Adds from "@/components/Adds";
-import hero from "../../../public/media/qwqw.png";
+import hero from "../../../public/media/t3.jpg";
 import OurProjects from "@/components/sections/OurProjects";
 import useIntl from "react-intl/src/components/useIntl";
 

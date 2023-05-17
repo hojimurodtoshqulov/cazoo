@@ -4,8 +4,10 @@
 	position: sticky;
 	top: 0;
 	left: 0;
+	z-index: 1;
 	overflow-y: scroll;
 	box-shadow: 2px 3px 15px rgba(0, 0, 0, 0.529);
+	background: #fff;
 	h2 {
 		padding: 10px 0 10px 40px;
 		color: #123250;
