@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import {
   Dispatch,
   MouseEvent,
@@ -10,12 +12,13 @@ import {
 import styles from "./styles.module.scss";
 import hero from "../../../public/media/Rectangle 6959.png";
 import ImageMagnifierGlass from "../ImageMagnifier";
+import {API_URL} from "@/hooks/requests";
 
 function ModalImages({
-  images,
+  imageId,
   setBigImage,
 }: {
-  images?: number[];
+  images?: number;
   setBigImage: Dispatch<
     SetStateAction<{
       src: string;
@@ -23,41 +26,44 @@ function ModalImages({
     }>
   >;
 }) {
-  const [image, setImage] = useState(images?.[0] || 0);
+  const [image, setImage] = useState(imageId);
 
   useEffect(() => {
-    setImage(images?.[0] || 0);
-  }, [images]);
+    setImage(imageId );
+  }, [imageId]);
 
-  console.log(images);
+  console.log(imageId);
 
   return (
     <div className={styles.images}>
-      <div className={styles.miniimages}>
+     {/*  <div className={styles.miniimages}>
         {images?.map((image: number) => (
           <img
-            src={`https://the-doors.herokuapp.com/api/files/${image}`}
+            src={`${API_URL}/files/${image}`}
             onClick={(e) => {
               setImage(image);
             }}
           />
         ))}
-        {/* <img
+        <img
           src={`data:image/png;base64,${images?.[0].data}`}
           onClick={(e) => {
             setImage(images?.[0].data || "");
           }}
-        /> */}
-      </div>
-      <ImageMagnifierGlass
-        imageSrc={image}
-        onClick={() => {
-          setBigImage({
-            src: `https://the-doors.herokuapp.com/api/files/${image}`,
-            isActive: true,
-          });
-        }}
-      />
+        />
+      </div> */}
+        <img className={styles.img}
+            src={`${API_URL}/files/${imageId}`}
+        />
+      {/*<ImageMagnifierGlass*/}
+      {/*  imageSrc={image}*/}
+      {/*  onClick={() => {*/}
+      {/*    setBigImage({*/}
+      {/*      src: `${API_URL}${image}`,*/}
+      {/*      isActive: true,*/}
+      {/*    });*/}
+      {/*  }}*/}
+      {/*/>*/}
     </div>
   );
 }

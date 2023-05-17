@@ -86,4 +86,33 @@
 			display: block;
 		}
 	}
+
+	.infoItem {
+		margin-bottom: .5rem;
+		h4, p {
+			display: inline;
+		}
+
+		h4 {
+			font-size: 20px;
+		}
+		p {
+			font-size: 18px;
+		}
+	}
+
+	.infoFeatures {
+		display: flex;
+		gap: 10px;
+		flex-wrap: wrap;
+		h4 {
+			font-size: 20px;
+		}
+		span {
+			border: 1px solid lightgray;
+			padding: 0px 5px;
+			font-size: 12px;
+			border-radius: 5px;
+		}
+	}
 }
