@@ -20,6 +20,7 @@ function AppLayout({ children }: MainPropType) {
             src="/media/showVideo2.mp4"
             autoPlay
             muted
+            playsInline
             style={{
               width: "100vw",
               height: "100vh",

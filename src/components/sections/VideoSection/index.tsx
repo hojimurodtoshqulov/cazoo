@@ -39,7 +39,7 @@ function VideoSection() {
 			ref={ref}
 		>
 			{/* <video src="public/media/site.mp4" controls></video> */}
-			<video loop muted ref={vdRef}>
+			<video playsInline loop muted ref={vdRef}>
 				<source
 					// src="https://ideallux-space.nyc3.digitaloceanspaces.com/IMG_0115.MP4"
 					// src="https://the-doors.herokuapp.com/api/files/470"
