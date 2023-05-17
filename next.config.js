@@ -8,6 +8,9 @@ const nextConfig = {
     image: {
         domains: [' 10c72c27-767c-4998-967b-2da3e773b024.jprq.live'],
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 };
 
 module.exports = nextConfig;

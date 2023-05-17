@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef, useState } from "react";
 import logo from "../../../public/media/logo the doors 1.png";
 import logo1 from "../../../public/media/logo the doors.svg";
@@ -70,11 +71,11 @@ function Navbar() {
 			.getElementById(e.currentTarget.dataset.to)
 			?.scrollIntoView({ behavior: "smooth" });
 	};
-	const scrollToTop = () => {
-		console.log("scrollToTop");
-		return window.scrollTo(0, 5350);
-	};
-	console.log(window.pageYOffset); //5500
+	// const scrollToTop = () => {
+	// 	console.log("scrollToTop");
+	// 	return window.scrollTo(0, 5350);
+	// };
+	// console.log(window.pageYOffset); //5500
 	return (
 		<>
 			<nav

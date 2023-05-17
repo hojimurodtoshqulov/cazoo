@@ -1,4 +1,4 @@
-import { ProductType } from "@/shared/types";
+
 import styles from "./modale.module.scss";
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
